@@ -9,6 +9,7 @@ import UserContext from "../../../AuthContaxt/index";
 import {Preferences} from "../../../UtilMethods/AppLocalStorage";
 import PreferencesKeys from "../../../UtilMethods/PreferencesKeys";
 import ApiServices from "../../../ApiServices/Services";
+import Moment from 'moment';
 
 const ClinicHome = ({navigation}) => {
     const store = React.useContext(UserContext);
@@ -154,7 +155,7 @@ const ClinicItem = ({navigation, item}) => {
     }}>
         <View style={[AppStyles.rowContainer, {justifyContent: 'space-between'}]}>
 
-            <Text style={[Typography.Bold, {color: colors.white}]}>{`Date: ${item.date}`}</Text>
+            <Text style={[Typography.Bold, {color: colors.white}]}>{`Date: ${Moment(item.date).format('DD/MM/YYYY')}`}</Text>
 
         </View>
 
